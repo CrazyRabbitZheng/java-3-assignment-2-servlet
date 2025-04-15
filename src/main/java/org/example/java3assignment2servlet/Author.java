@@ -1,7 +1,7 @@
 /**
  * Represents an author with their ID, name, and books they wrote
  */
-package org.example;
+package org.example.java3assignment2servlet;
 
 import java.util.ArrayList;
 import java.util.List;

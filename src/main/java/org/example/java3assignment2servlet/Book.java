@@ -1,7 +1,7 @@
 /**
  * Represents a book with its ISBN, title, edition number , copyright year, and its author
  */
-package org.example;
+package org.example.java3assignment2servlet;
 
 import java.util.ArrayList;
 import java.util.List;

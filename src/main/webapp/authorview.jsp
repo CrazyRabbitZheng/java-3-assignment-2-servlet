@@ -1,16 +1,42 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Zheng Wang
-  Date: 2025-04-15
-  Time: 8:38 a.m.
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="org.example.java3assignment2servlet.Author" %>
+<%@ page import="org.example.java3assignment2servlet.Book" %>
+<%@ page import="java.util.List" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+  <title>Author List</title>
+</head>
+<body>
+<h2>Author List</h2>
+
+<%
+  List<Author> authors = (List<Author>) request.getAttribute("authors");
+  if (authors != null && !authors.isEmpty()) {
+    for (Author author : authors) {
+%>
+<div style="margin-bottom: 20px;">
+  <b>Name:</b> <%= author.getFirstName() %> <%= author.getLastName() %><br/>
+  <b>Books:</b>
+  <ul>
+    <%
+      for (Book book : author.getBookList()) {
+    %>
+    <li><%= book.getTitle() %> (ISBN: <%= book.getIsbn() %>)</li>
+    <%
+      }
+    %>
+  </ul>
+</div>
+<%
+  }
+} else {
+%>
+<p>No authors found.</p>
+<%
+  }
+%>
+
+<br/>
+<a href="index.jsp">Return to Menu</a>
+</body>
 </html>

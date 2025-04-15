@@ -1,4 +1,4 @@
-package org.example;
+package org.example.java3assignment2servlet;
 
 import java.sql.*;
 import java.util.ArrayList;
